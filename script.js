@@ -2,6 +2,9 @@
 // MISTERY NUMBER
 let numberMistery = document.querySelector(".number").textContent
 numberMistery = Math.floor(Math.random() * 10) + 1;
+
+console.log({ numberMistery });
+
 //SCORE
 let score = Number(document.querySelector(".score").textContent)
 let firstHightScore = true;
@@ -31,9 +34,11 @@ document.querySelector(".check").addEventListener('click', function () {
                 score -= 1;
                 document.querySelector(".score").textContent = score
             } else {
-                score = 20
+                // debugger;
                 score -= 1;
                 document.querySelector(".score").textContent = score
+                console.log("secondssd", score);
+
             }
             (inputGuessValue > numberMistery) ? document.querySelector(".message").textContent = "📈 Too hight"
                 : document.querySelector(".message").textContent = "📉 Too low"
@@ -46,11 +51,14 @@ document.querySelector(".again").addEventListener("click", function () {
     document.querySelector(".check").disabled = false;
     document.querySelector(".guess").disabled = false
     document.querySelector(".score").textContent = 20;
+    score = 20
     document.querySelector(".check").style.cursor = "pointer";
     document.querySelector("body").style.backgroundColor = "black"
     document.querySelector(".guess").value = ""
     document.querySelector(".number").textContent = "?"
     numberMistery = Math.floor(Math.random() * 10) + 1;
+    console.log("222", { numberMistery });
+
 })
 
 
